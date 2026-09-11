@@ -146,13 +146,13 @@ b{font-weight:800}
   font-weight:900;line-height:1.05;letter-spacing:-.01em;
   font-size:clamp(2.7rem,8.5vw,4.4rem);
   margin-bottom:18px;
-  -webkit-text-stroke:6px #fff;
+  -webkit-text-stroke:.09em #fff;
   paint-order:stroke fill;
   text-shadow:0 5px 0 rgba(196,60,120,.18);
 }
 .hero-title span{display:inline-block}
 .t-pink{color:var(--pink)}
-.t-ink{color:#5b4b52;font-size:.62em;-webkit-text-stroke-width:4px}
+.t-ink{color:#5b4b52;font-size:.62em;-webkit-text-stroke-width:.09em}
 .t-teal{color:#2fb6b0}
 .t-gold{color:var(--gold);font-style:italic;transform:rotate(-4deg);text-shadow:0 4px 0 var(--gold-deep)}
 
