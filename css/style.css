@@ -269,15 +269,19 @@ b{font-weight:800}
 .panel-body{padding:20px 22px 22px}
 .two-col .panel .ribbon{margin-top:2px}
 
-/* points list */
-.points-list div{
-  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
-  padding:11px 2px;border-bottom:1px dashed #e6c9d8;
+/* points highlight (獲得ポイント例: 単一レンジ表示) */
+.points-highlight{
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  padding:18px 4px 8px;text-align:center;
 }
-.points-list div:last-child{border-bottom:none}
-.points-list dt{font-weight:800;color:#555;font-size:.95rem}
-.points-list dd{font-weight:900;color:var(--gold-dark);font-size:1.15rem;white-space:nowrap}
-.points-list dd.dd-plain{color:#8a8a8a;font-size:.9rem;font-weight:700}
+.coin-lg{width:64px;height:64px;font-size:1.9rem;border-width:3px}
+.points-range{
+  font-weight:900;color:var(--gold-dark);
+  font-size:clamp(1.4rem, 4.2vw, 2rem);line-height:1.2;
+}
+.points-sep{margin:0 4px;color:var(--gold-dark);font-weight:700}
+.points-max{font-size:clamp(1.7rem, 5.2vw, 2.4rem);margin-left:2px}
+.points-unit{font-size:clamp(.9rem, 2.6vw, 1.1rem);margin-left:3px;font-weight:800}
 
 /* flow */
 .flow{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 4px}
@@ -412,7 +416,6 @@ b{font-weight:800}
   .flow{gap:16px 4px}
   .flow-step{flex:1 1 40%;min-width:0}
   .flow-step:nth-child(3)::after,.flow-step:not(:last-child)::after{display:none}
-  .points-list dd{font-size:1.02rem}
 }
 
 @media (prefers-reduced-motion:reduce){
