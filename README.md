@@ -1,15 +1,21 @@
 # 第一カード商会 — アドウォールLP
 
 アドウォール（ポイント還元広告）経由の流入ユーザー向けランディングページ。
-静的な HTML / CSS / JS 構成で、サーバー不要。`index.html` をブラウザで開けば確認できます。
+静的な HTML / CSS / JS 構成で、サーバー不要。`index.html`（未ログインユーザー用）/
+`login.html`（ログイン済みユーザー用）をブラウザで開けば確認できます。
+
+`login.html` は `index.html` をベースに、ヒーロー見出し・バッジ・フッターCTA文言のみ
+会員向けトーン（「いつもご利用ありがとうございます」「今日も無料でポイントGET!」）に
+差し替えたもので、それ以外の構成・CSS・CTA遷移先は共通です。
 
 ## ファイル構成
 
 ```
 landingpage/
-├─ index.html        … ページ本体
-├─ css/style.css     … スタイル（デザイントークンは :root で定義）
-├─ js/main.js        … リンク差し替え・追従CTA・FAQ開閉・フェードイン
+├─ index.html        … ページ本体（未ログインユーザー用）
+├─ login.html        … ページ本体（ログイン済みユーザー用／会員向けトーン）
+├─ css/style.css     … スタイル（デザイントークンは :root で定義／両ページ共通）
+├─ js/main.js        … リンク差し替え・追従CTA・FAQ開閉・フェードイン（両ページ共通）
 ├─ assets/
 │  ├─ logo.jpg              … 支給ロゴ原本（400x400）
 │  ├─ logo-mark.png        … ロゴのシンボルマークのみ（ヘッダーで使用）
@@ -17,19 +23,22 @@ landingpage/
 │  ├─ character-hero.png    … 手を振るキャラ（ヒーロー右／フッターCTA）
 │  └─ character-point.png   … ピースするキャラ（「アドウォールとは？」左）
 ├─ export/
-│  ├─ html.txt          … 画像埋め込み＋JSインライン済みの完全なHTML文書（エディター貼り付け用）
-│  ├─ css.txt           … CSS（エディターのCSS欄に貼り付け用）
-│  └─ build-export.py   … 上記2ファイルを再生成するスクリプト（要 Pillow）
+│  ├─ html.txt          … index.html を画像埋め込み＋JSインライン化した完全なHTML文書（エディター貼り付け用）
+│  ├─ login-html.txt    … login.html を同様に変換した完全なHTML文書（エディター貼り付け用）
+│  ├─ css.txt           … CSS（エディターのCSS欄に貼り付け用／両ページ共通）
+│  └─ build-export.py   … 上記3ファイルを再生成するスクリプト（要 Pillow）
 └─ README.md
 ```
 
 ## ブラウザエディターへの貼り付け（export/）
 
-- `export/html.txt` … エディターのHTML欄に全文貼り付け。`<!DOCTYPE html>` から始まる完全な
-  文書で、ロゴ・キャラ画像は base64 埋め込み、`main.js` は末尾の `<script>` にインライン済み。
-- `export/css.txt` … エディターのCSS欄に全文貼り付け。
+- `export/html.txt`（未ログイン用）/ `export/login-html.txt`（ログイン済み用） …
+  エディターのHTML欄に全文貼り付け。`<!DOCTYPE html>` から始まる完全な文書で、
+  ロゴ・キャラ画像は base64 埋め込み、`main.js` は末尾の `<script>` にインライン済み。
+- `export/css.txt` … エディターのCSS欄に全文貼り付け（両ページ共通）。
 - 遷移先URLは貼り付け後、HTML内の `<script>` の `CONFIG.ctaUrl` を書き換える。
-- 元ファイル（index.html / css / js / assets）を編集したら `python export/build-export.py` で再生成。
+- 元ファイル（index.html / login.html / css / js / assets）を編集したら
+  `python export/build-export.py` で両ページ分を再生成。
 
 ## 差し替え箇所
 
