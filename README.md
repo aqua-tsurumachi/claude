@@ -42,17 +42,17 @@ landingpage/
 
 ## 差し替え箇所
 
-### 1. 遷移先URL（必須）
-`js/main.js` 冒頭の `CONFIG` を編集（`export/html.txt` を使う場合はHTML内 `<script>` の同じ箇所）：
+### 1. 遷移先URL
+`js/main.js` 冒頭の `CONFIG` を編集（`export/html.txt` / `export/login-html.txt` を使う場合はHTML内 `<script>` の同じ箇所）：
 
 ```js
 var CONFIG = {
-  ctaUrl: 'https://example.com/adwall',   // 「ポイントを獲得する」ボタン
-  myPageUrl: 'https://example.com/mypage' // 「マイページ」リンク（login.htmlのみ使用）
+  ctaUrl: 'https://example.com/adwall',           // 「ポイントを獲得する」ボタン（要差し替え）
+  myPageUrl: 'https://daiichicard.com/mypage'     // 「マイページ」リンク（login.htmlのみ使用）
 };
 ```
 
-アドウォールのトラッキングパラメータが必要な場合も `ctaUrl` に付与してください。
+`ctaUrl` はまだ仮値のため、実際のアドウォール遷移先（トラッキングパラメータが必要な場合も含む）に要差し替えです。
 `myPageUrl` は `login.html` のヘッダーにある「マイページ」リンク（ログイン状態の目印を兼ねる）の遷移先です。
 `index.html` には `[data-mypage]` 要素が無いため、この値は無視されます。
 

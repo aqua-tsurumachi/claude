@@ -11,8 +11,8 @@
        ここに追記します）
      --------------------------------------------------------- */
   var CONFIG = {
-    ctaUrl: 'https://example.com/adwall',   // TODO: 「ポイントを獲得する」の遷移先
-    myPageUrl: 'https://example.com/mypage' // TODO: 「マイページ」の遷移先(login.htmlのみ使用)
+    ctaUrl: 'https://example.com/adwall',           // TODO: 「ポイントを獲得する」の遷移先
+    myPageUrl: 'https://daiichicard.com/mypage'     // 「マイページ」の遷移先(login.htmlのみ使用)
   };
 
   document.addEventListener('DOMContentLoaded', function () {
