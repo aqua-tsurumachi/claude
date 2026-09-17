@@ -56,7 +56,7 @@
         <p class="hero-lead">
           貯まった<b class="hl-pink">ポイント</b>は<b class="hl-teal">オリパ</b>にご利用いただけます！
         </p>
-        <a class="btn btn-primary" href="#" data-cta>
+        <a class="btn btn-primary" href="#" data-cta-login>
           <span class="coin coin-sm" aria-hidden="true">P</span>
           <span class="btn-label">ポイントを獲得する</span>
           <span class="btn-arrow" aria-hidden="true">&rsaquo;</span>
@@ -218,7 +218,7 @@
          onerror="this.remove()">
     <div class="container footer-cta-inner">
       <p class="footer-cta-text">今日も無料でポイントを貯めてオリパを楽しもう！</p>
-      <a class="btn btn-white" href="#" data-cta>
+      <a class="btn btn-white" href="#" data-cta-login>
         <span class="coin coin-sm" aria-hidden="true">P</span>
         <span class="btn-label">ポイントを獲得する</span>
         <span class="btn-arrow" aria-hidden="true">&rsaquo;</span>
@@ -243,7 +243,7 @@
 
 <!-- ===== Sticky CTA (mobile) ===== -->
 <div class="sticky-cta" id="stickyCta" hidden>
-  <a class="btn btn-primary btn-sticky" href="#" data-cta>
+  <a class="btn btn-primary btn-sticky" href="#" data-cta-login>
     <span class="coin coin-sm" aria-hidden="true">P</span>
     <span class="btn-label">ポイントを獲得する</span>
     <span class="btn-arrow" aria-hidden="true">&rsaquo;</span>
@@ -264,8 +264,9 @@
        ここに追記します）
      --------------------------------------------------------- */
   var CONFIG = {
-    ctaUrl: 'https://example.com/adwall',           // TODO: 「ポイントを獲得する」の遷移先
-    myPageUrl: 'https://daiichicard.com/mypage'     // 「マイページ」の遷移先(login.htmlのみ使用)
+    ctaUrl: 'https://daiichicard.com/pages/adwall-02', // 「ポイントを獲得する」の遷移先(index.htmlのみ使用)
+    loginCtaUrl: 'https://ad-track-wall.jp/daiichicard0701/1661?digest=52c595a235ff4af47beb93bc57ff14d56060f3f40850cd69cb9326c791360b1c#/', // 「ポイントを獲得する」の遷移先(login.htmlのみ使用)
+    myPageUrl: 'https://daiichicard.com/mypage'        // 「マイページ」の遷移先(login.htmlのみ使用)
   };
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -279,6 +280,7 @@
   /* リンクの一括設定 --------------------------------------- */
   function applyLinks() {
     setHref('[data-cta]', CONFIG.ctaUrl);
+    setHref('[data-cta-login]', CONFIG.loginCtaUrl);
     setHref('[data-mypage]', CONFIG.myPageUrl);
   }
   function setHref(selector, url) {

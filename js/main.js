@@ -11,8 +11,9 @@
        ここに追記します）
      --------------------------------------------------------- */
   var CONFIG = {
-    ctaUrl: 'https://example.com/adwall',           // TODO: 「ポイントを獲得する」の遷移先
-    myPageUrl: 'https://daiichicard.com/mypage'     // 「マイページ」の遷移先(login.htmlのみ使用)
+    ctaUrl: 'https://daiichicard.com/pages/adwall-02', // 「ポイントを獲得する」の遷移先(index.htmlのみ使用)
+    loginCtaUrl: 'https://ad-track-wall.jp/daiichicard0701/1661?digest=52c595a235ff4af47beb93bc57ff14d56060f3f40850cd69cb9326c791360b1c#/', // 「ポイントを獲得する」の遷移先(login.htmlのみ使用)
+    myPageUrl: 'https://daiichicard.com/mypage'        // 「マイページ」の遷移先(login.htmlのみ使用)
   };
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -26,6 +27,7 @@
   /* リンクの一括設定 --------------------------------------- */
   function applyLinks() {
     setHref('[data-cta]', CONFIG.ctaUrl);
+    setHref('[data-cta-login]', CONFIG.loginCtaUrl);
     setHref('[data-mypage]', CONFIG.myPageUrl);
   }
   function setHref(selector, url) {
