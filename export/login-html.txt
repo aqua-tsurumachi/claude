@@ -27,6 +27,13 @@
         <span class="brand-name-en">DAIICHI CARD COMPANY</span>
       </span>
     </a>
+    <a class="mypage-link" href="#" data-mypage aria-label="マイページ（ログイン中）">
+      <span class="mypage-dot" aria-hidden="true"></span>
+      <span class="mypage-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6.2 7-6.2s7 2.6 7 6.2"/></svg>
+      </span>
+      <span class="mypage-text">マイページ</span>
+    </a>
   </div>
 </header>
 
@@ -75,9 +82,9 @@
                onerror="this.closest('.about-illust').classList.add('illust-fallback');this.remove()">
         </div>
         <div class="about-text">
-          <p>企業の広告案件をご利用いただくことで、<br>
-             広告主からの報酬の一部を<b class="hl-pink">ポイント</b>として還元するサービスです。</p>
-          <p>お客様に<b class="hl-pink">費用はかかりません！</b><span class="note-inline">（※有料案件を除く）</span></p>
+          <p>会員のみなさまが企業の広告案件をご利用いただくたびに、<br>
+             広告主からの報酬の一部を<b class="hl-pink">ポイント</b>として還元する会員限定サービスです。</p>
+          <p>会員のお客様に<b class="hl-pink">費用はかかりません！</b><span class="note-inline">（※有料案件を除く）</span></p>
         </div>
       </div>
     </div>
@@ -86,7 +93,7 @@
   <!-- ===== こんな案件があります ===== -->
   <section class="section cases reveal">
     <div class="container">
-      <h2 class="ribbon ribbon-pink"><span class="ribbon-spark">✦</span>こんな案件があります！<span class="ribbon-spark">✦</span></h2>
+      <h2 class="ribbon ribbon-pink"><span class="ribbon-spark">✦</span>会員のあなたにおすすめの案件！<span class="ribbon-spark">✦</span></h2>
       <ul class="case-grid">
         <li class="case-card">
           <span class="case-icon">
@@ -125,7 +132,7 @@
           <span class="case-name">資料請求・申込</span>
         </li>
       </ul>
-      <p class="note-center">※掲載案件は時期によって異なります。</p>
+      <p class="note-center">※会員限定案件を含め、掲載内容は時期によって異なります。</p>
     </div>
   </section>
 
@@ -171,6 +178,7 @@
         <h2 class="ribbon ribbon-pink ribbon-sm"><span class="ribbon-spark">✦</span>ご利用前の注意<span class="ribbon-spark">✦</span></h2>
         <div class="panel-body">
           <ul class="note-list">
+            <li>ログイン中のため、案件達成後のポイントは自動的にアカウントへ反映されます。</li>
             <li>必ず案件詳細をご確認ください。</li>
             <li>ポイント付与条件は案件ごとに異なります。</li>
             <li>条件未達成の場合はポイント対象外となる場合があります。</li>
@@ -189,11 +197,11 @@
             </div>
             <div class="faq-item open">
               <button class="faq-q" type="button"><span class="faq-mark">Q</span>ポイントはいつ反映されますか？</button>
-              <div class="faq-a">案件ごとに異なります。即時付与されるものから、数日〜数週間かかるものがあります。</div>
+              <div class="faq-a">案件ごとに異なります。即時付与されるものから、数日〜数週間かかるものがあります。ログイン中のお客様のアカウントに自動で反映され、マイページからいつでもご確認いただけます。</div>
             </div>
             <div class="faq-item open">
               <button class="faq-q" type="button"><span class="faq-mark">Q</span>ポイントが付与されません。</button>
-              <div class="faq-a">案件詳細の条件をご確認ください。条件を満たしているにもかかわらず付与されない場合は、お問い合わせください。</div>
+              <div class="faq-a">案件詳細の条件をご確認ください。マイページの獲得履歴もあわせてご確認いただき、条件を満たしているにもかかわらず付与されない場合は、お問い合わせください。</div>
             </div>
           </div>
         </div>
@@ -256,7 +264,8 @@
        ここに追記します）
      --------------------------------------------------------- */
   var CONFIG = {
-    ctaUrl: 'https://example.com/adwall'   // TODO: 「ポイントを獲得する」の遷移先
+    ctaUrl: 'https://example.com/adwall',   // TODO: 「ポイントを獲得する」の遷移先
+    myPageUrl: 'https://example.com/mypage' // TODO: 「マイページ」の遷移先(login.htmlのみ使用)
   };
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -270,6 +279,7 @@
   /* リンクの一括設定 --------------------------------------- */
   function applyLinks() {
     setHref('[data-cta]', CONFIG.ctaUrl);
+    setHref('[data-mypage]', CONFIG.myPageUrl);
   }
   function setHref(selector, url) {
     if (!url) return;

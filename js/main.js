@@ -11,7 +11,8 @@
        ここに追記します）
      --------------------------------------------------------- */
   var CONFIG = {
-    ctaUrl: 'https://example.com/adwall'   // TODO: 「ポイントを獲得する」の遷移先
+    ctaUrl: 'https://example.com/adwall',   // TODO: 「ポイントを獲得する」の遷移先
+    myPageUrl: 'https://example.com/mypage' // TODO: 「マイページ」の遷移先(login.htmlのみ使用)
   };
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -25,6 +26,7 @@
   /* リンクの一括設定 --------------------------------------- */
   function applyLinks() {
     setHref('[data-cta]', CONFIG.ctaUrl);
+    setHref('[data-mypage]', CONFIG.myPageUrl);
   }
   function setHref(selector, url) {
     if (!url) return;

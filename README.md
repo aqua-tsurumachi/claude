@@ -36,7 +36,7 @@ landingpage/
   エディターのHTML欄に全文貼り付け。`<!DOCTYPE html>` から始まる完全な文書で、
   ロゴ・キャラ画像は base64 埋め込み、`main.js` は末尾の `<script>` にインライン済み。
 - `export/css.txt` … エディターのCSS欄に全文貼り付け（両ページ共通）。
-- 遷移先URLは貼り付け後、HTML内の `<script>` の `CONFIG.ctaUrl` を書き換える。
+- 遷移先URLは貼り付け後、HTML内の `<script>` の `CONFIG.ctaUrl`（/ login.htmlは`CONFIG.myPageUrl`も）を書き換える。
 - 元ファイル（index.html / login.html / css / js / assets）を編集したら
   `python export/build-export.py` で両ページ分を再生成。
 
@@ -47,11 +47,14 @@ landingpage/
 
 ```js
 var CONFIG = {
-  ctaUrl: 'https://example.com/adwall'   // 「ポイントを獲得する」ボタン
+  ctaUrl: 'https://example.com/adwall',   // 「ポイントを獲得する」ボタン
+  myPageUrl: 'https://example.com/mypage' // 「マイページ」リンク（login.htmlのみ使用）
 };
 ```
 
 アドウォールのトラッキングパラメータが必要な場合も `ctaUrl` に付与してください。
+`myPageUrl` は `login.html` のヘッダーにある「マイページ」リンク（ログイン状態の目印を兼ねる）の遷移先です。
+`index.html` には `[data-mypage]` 要素が無いため、この値は無視されます。
 
 ### 2. キャラクター画像（配置済み）
 
