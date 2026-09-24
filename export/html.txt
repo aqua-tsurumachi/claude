@@ -76,7 +76,7 @@
         </div>
         <div class="about-text">
           <p>企業の広告案件をご利用いただくことで、<br>
-             広告主からの報酬の一部を<b class="hl-pink">ポイント</b>として還元するサービスです。</p>
+             広告主からの報酬の一部を<b class="hl-pink">ポイント</b>として還元する会員限定サービスです。</p>
           <p>お客様に<b class="hl-pink">費用はかかりません！</b><span class="note-inline">（※有料案件を除く）</span></p>
         </div>
       </div>
